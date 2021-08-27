@@ -45,4 +45,6 @@ services:
       - postgresdb
     environment: 
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - TOKEN2=${TOKEN2}
+      - TOKEN_TELEGRAM=${TOKEN_TELEGRAM}
+
+  
