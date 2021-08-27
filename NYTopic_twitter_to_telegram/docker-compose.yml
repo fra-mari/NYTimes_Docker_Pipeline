@@ -15,6 +15,8 @@ services:
     environment:
     - API_KEY=${API_KEY}
     - API_SECRET=${API_SECRET}
+    - ACCESS_TOKEN=${ACCESS_TOKEN}
+    - SECRET_ACCESS_TOKEN=${SECRET_ACCESS_TOKEN}
 
   postgresdb:
     image: postgres
