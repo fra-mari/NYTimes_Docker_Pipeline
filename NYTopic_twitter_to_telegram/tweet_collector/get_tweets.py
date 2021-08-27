@@ -152,8 +152,8 @@ while True:
     logging.warning('Starting a streaming phase...')
     NYTStreamListener = MyStreamListener()
     try:
-        myStream = Stream(auth = auth, listener=NYTStreamListener, tweet_mode='extended')
-        myStream.filter(follow=["807095"])
+        my_stream = Stream(auth = auth, listener=NYTStreamListener, tweet_mode='extended')
+        my_stream.filter(follow=["807095"])
     except ReadTimeoutError as e:
         logging.error(f"{e.args}. This is normal after a while. Restarting the stream...")
         continue
