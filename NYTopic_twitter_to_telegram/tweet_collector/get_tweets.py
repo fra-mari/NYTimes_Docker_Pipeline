@@ -12,7 +12,7 @@ from tweepy import OAuthHandler, Cursor, API, Stream
 from tweepy.streaming import StreamListener
 
 
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
                     level=logging.INFO)#, filename='get_tweets.log')
 
 
@@ -155,7 +155,7 @@ while True:
         myStream = Stream(auth = auth, listener=NYTStreamListener, tweet_mode='extended')
         myStream.filter(follow=["807095"])
     except ReadTimeoutError as e:
-        logging.error(f"{e.args}: {e.message}. But this is normal after a while. Restarting the stream...")
+        logging.error(f"{e.args}. This is normal after a while. Restarting the stream...")
         continue
     sleep(60*5)
     logging.warning('Checking if anything relevant has been tweeted during the pause of the streaming.')

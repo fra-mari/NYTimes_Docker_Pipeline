@@ -13,7 +13,7 @@ from telegram.ext import Updater, dispatcher, CommandHandler, MessageHandler, Fi
 from sqlalchemy import create_engine
 
 
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
                     level=logging.INFO)#, filename='telegram_script.log')
 
 ###Environment variables
@@ -23,7 +23,7 @@ PW = os.getenv('POSTGRES_PASSWORD')
 
 ###Connect to postgres
 
-sleep(50)
+sleep(15)
 
 pg = create_engine(f'postgresql://postgres:{PW}@postgresdb:5432/nytimes', echo=False).connect()
 #pg = create_engine(f'postgresql://postgres:{PW}@localhost:5555/obama', echo=True).connect()

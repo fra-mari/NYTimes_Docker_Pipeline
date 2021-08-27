@@ -15,8 +15,8 @@ import spacy
 from sqlalchemy import create_engine
 from sqlalchemy.sql import text  
 
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)#, filename='etl.log')
 
 # importing the postgres password
 PW = os.getenv('POSTGRES_PASSWORD') 
