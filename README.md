@@ -2,7 +2,7 @@
 
 <h1 align="center" >The New York Times Docker Pipeline</h1>
 
-<p align="center"><img src="https://img.shields.io/badge/Made%20with-Python-E8B90F.svg"/> <img src="https://img.shields.io/badge/Maintained%5F-yes-pink.svg"/> <img src="https://img.shields.io/badge/Hosted-oh%20yes!-pass.svg"/> <img src="https://img.shields.io/badge/License-MIT-blue.svg"/><br></p>
+<p align="center"><img src="https://img.shields.io/badge/Made%20with-Python-E8B90F.svg"/> <img src="https://img.shields.io/badge/Maintained%5F-yes-pink.svg"/> <img src="https://img.shields.io/badge/Hosted-oh%20yes!-pass.svg"/> <img src="https://img.shields.io/badge/License-MIT-blue.svg"/><br><br></p>
 
 
 
