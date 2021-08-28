@@ -51,7 +51,7 @@ try:
         """Send a message when the command /start is issued."""
         context.bot.send_message(
             chat_id=update.effective_chat.id,
-            text="Hello folks!👋🏻\nI'm a simple bot that selects the latest tweet of the New York Times on topics of your choice.\n\nTell me a word or a string of words! I shall see if I can find it in one of the NYT tweets...\n\nType /help for more information.",
+            text='''Hello folks!👋🏻\nI'm a simple bot that selects the latest tweet of the New York Times on topics of your choice.\n\nTell me a word or a string of words! I shall see if I can find it in one of the NYT tweets...\n\nType /help for more information.\n\n📌 <a href="https://github.com/fra-mari/NYTimes_Docker_Pipeline">Click here</a> for the GitHub repository of this bot.''',
             parse_mode=telegram.ParseMode.HTML)
 
     start_handler = CommandHandler("start", start)
@@ -61,7 +61,7 @@ try:
         """Send a message when the command /help is issued."""
         context.bot.send_message(
             chat_id=update.effective_chat.id,
-            text="📜 <b>Instructions</b> 📜\n\n▶️ To fetch NYT tweets on a specific topic, just type a word or a string of words in a message, then press <i>send</i>. I shall look for that word combination in my database of tweets.\n\n▶️ You can use the <i>hashtags</i> below each result to match similar articles found in your past researches.",
+            text="📜 <b>Instructions</b> 📜\n\n📌 To fetch NYT tweets on a specific topic, just type a word or a string of words in a message, then press <i>send</i>. I shall look for that word combination in my database of tweets.\n\n📌 You can use the <i>hashtags</i> below each result to match similar articles found in your past researches.",
             parse_mode=telegram.ParseMode.HTML)
 
     help_handler = CommandHandler("help", help)

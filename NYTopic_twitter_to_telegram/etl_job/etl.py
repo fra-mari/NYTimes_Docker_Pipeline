@@ -70,7 +70,7 @@ def write_tweet_to_posgres(tweet):
     pg.execute(
         text("INSERT INTO tweets_transformed VALUES (:x,:y,:z);"),
         x=tweet["text"],
-        y=tweet["tweet_date"],
+        y=str(tweet["tweet_date"]),
         z=tweet["hashtags"])  
     logging.warning("Tweet written to postgres")
 

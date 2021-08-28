@@ -18,15 +18,14 @@ logging.basicConfig(
 
 API_KEY = os.getenv("API_KEY")
 API_SECRET = os.getenv("API_SECRET")
+ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+ACCESS_TOKEN_SECRET = os.getenv("SECRET_ACCESS_TOKEN")
+
 
 
 def authenticate():
     """Function for handling Twitter Authentication."""
-    API_KEY = os.getenv("API_KEY")
-    API_SECRET = os.getenv("API_SECRET")
-    ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
-    ACCESS_TOKEN_SECRET = os.getenv("SECRET_ACCESS_TOKEN")
-
+     
     auth = OAuthHandler(API_KEY, API_SECRET)
     auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
@@ -62,7 +61,7 @@ def cursor_cycle():
         tweet = {
             "text": text,
             "username": status.user.screen_name,
-            "tweet_date": str(status.created_at),
+            "tweet_date": status.created_at,
         }
 
         collection.insert_one(tweet)
