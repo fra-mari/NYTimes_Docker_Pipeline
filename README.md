@@ -1,4 +1,4 @@
-<span align='center'><img src='./img_and_gif/NYTtopic_logo.png' height='80'></span>
+<p align='center'><img src='./img_and_gif/NYTtopic_logo.png' height='80'></p>
 
 <h1 align="center" >The New York Times Docker Pipeline</h1>
 
