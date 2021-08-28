@@ -9,7 +9,7 @@
 
 <div><div style="float: left; padding-right: 10px">
 <img src='./img_and_gif/NYTtopic.gif' height='650' align='left'>
-</div>This<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+</div>This<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
 
 
 
