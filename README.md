@@ -1,15 +1,15 @@
 # The New York Times Docker Pipeline
 *A Docker pipeline which uses MongoDB, SpaCy, SQL, and dedicated Python libraries for browsing among the most recent tweets from the New York Times via an (available!) Telegram bot.* 
 
-![made-with-python](https://img.shields.io/badge/Made%20with-Python-#E8B90F.svg) ![Maintenance](https://img.shields.io/badge/Maintained%5F-yes-pink.svg) ![Generic badge](https://img.shields.io/badge/Hosted-oh yes!-pass.svg) ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
+![made-with-python](https://img.shields.io/badge/Made%20with-Python-E8B90F.svg) ![Maintenance](https://img.shields.io/badge/Maintained%5F-yes-pink.svg) ![Generic badge](https://img.shields.io/badge/Hosted-oh%20yes!-pass.svg) ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
 
 
 
 
 
-<div style="float: left; padding-right: 10px">
+<div><div style="float: left; padding-right: 10px">
 <img src='./img_and_gif/NYTtopic.gif' height='650' align='left'>
-</div>This
+</div>This</div>
 
 
 
