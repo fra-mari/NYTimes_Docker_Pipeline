@@ -9,9 +9,7 @@
 
 <div><div style="float: left; padding-right: 10px">
 <img src='./img_and_gif/NYTtopic.gif' height='650' align='left'>
-</div>This<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
-
-
+</div>This<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
 
 
 ---
@@ -43,7 +41,7 @@
 - Clone this repository and install [Docker](https://www.docker.com/get-started) if needed.
 - Go into the folder `NYTopic_twitter_to_telegram`:
   - run `docker-compose build` and wait for Docker to set up everything for you;
-  - run `docker-compose up` and for a few seconds.
+  - run `docker-compose up`. The bot should start responding within a few seconds.
 - Open a Telegram chat with your new bot and start browsing *The New York Times*!
 
 ---
