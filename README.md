@@ -38,7 +38,7 @@
   - Once in possession of the access keys, store them locally as _environment variables_ with the following names: `API_KEY`, `API_SECRET`, `ACCESS_TOKEN`, `SECRET_ACCESS_TOKEN`.
 
 - Authentication to Telegram Bot Api is coparatively easier, as you only need one **Access Token**:
-  - To generate it, you have to chat with [BotFather](https://core.telegram.org/bots#6-botfather) on Telegram (no kidding!) and follow a few simple steps (to prevent overlapping, please make sure you do not choose [NYTtopic](https://t.me/NYTtopic_bot) as a name for your bot&nbsp;🙏🏻).
+  - To generate it, you have to chat with [BotFather](https://core.telegram.org/bots#6-botfather) on Telegram (no kidding!) and follow a few simple steps (to prevent overlapping, please make sure you do not choose [NYTtopic](https://t.me/NYTtopic_bot) as a name for your bot&nbsp;🙏🏻&nbsp;).
   - Once again, store the token as an _environment variable_. Call it `TOKEN_TELEGRAM`.
 
 #### 📌&nbsp; STEP 2: Run the pipeline with Docker
