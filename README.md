@@ -6,7 +6,7 @@
 
 
 
-
+<br><br>
 
 <div><div style="float: left; padding-right: 15px">
 <img src='./img_and_gif/NYTtopic.gif' height='650' align='left'>
