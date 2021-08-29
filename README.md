@@ -4,6 +4,8 @@
 
 <p align="center"><img src="https://img.shields.io/badge/Made%20with-Python-E8B90F.svg"/> <img src="https://img.shields.io/badge/Maintained%5F-yes-pink.svg"/> <img src="https://img.shields.io/badge/Hosted-oh%20yes!-pass.svg"/> <img src="https://img.shields.io/badge/License-MIT-blue.svg"/><br></p><p align="center"><i>Available on Telegram <a href="https://t.me/NYTtopic_bot">@NYTtopic</a></i><br></p>
 
+
+
 <div><div style="float: left; padding-right: 15px">
 <img src='./img_and_gif/NYTtopic.gif' height='650' align='left'>
 </div>This code maintains a simple <b>Telegram bot</b> which collects fresh updates from the Twitter account of <i>The New York Times</i> and allows the user to look for recent articles on topics of their choice.<br>Hosted on <a href='https://aws.amazon.com/ec2/'><b>Amazon EC2</b></a>, the <a href="https://t.me/NYTtopic_bot">NYTtopic Bot</a> consists of a pipeline of Docker containers:<br><br><br><ul style="list-style-type:none">
