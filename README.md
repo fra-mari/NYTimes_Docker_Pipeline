@@ -55,5 +55,5 @@
 
 - [x] ~Add a container for removing old records from Mongo and Postgres~.
 - [ ] Provide the user with links to similar content in other newspapers.
-- [ ] Make hashtag-based queries possible, so as to return all the articles related to a precise topic available in a single message.
+- [ ] Make hashtag-based queries possible, so as to return all the available articles related to a precise topic in a single message.
 
