@@ -27,42 +27,43 @@ def read_tweet_from_mongo():
     if tweets:
         t = random.choice(tweets)
 
-        logging.warning(f"Random tweet: {t['text']}")
+        logging.warning(f"Random tweet extracted from MongoDB: {t['text']}")
         return t
 
 # TRANSFORM (T)
 def add_hashtags(tweet):
     """Extract topic labels from the Tweet text and adds them to the dictionary as hashtags."""
 
-    no_url_text = re.sub(r"https://[a-zA-Z0-9./]+", "", tweet["text"]).strip()
-    doc = nlp(no_url_text)
-    LABELS = [
-        "PERSON",
-        "NORP",
-        "FAC",
-        "ORG",
-        "GPE",
-        "LOC",
-        "PRODUCT",
-        "EVENT",
-        "WORK_OF_ART",
-        "LAW"]
+    if tweet:
+        no_url_text = re.sub(r"https://[a-zA-Z0-9./]+", "", tweet["text"]).strip()
+        doc = nlp(no_url_text)
+        LABELS = [
+            "PERSON",
+            "NORP",
+            "FAC",
+            "ORG",
+            "GPE",
+            "LOC",
+            "PRODUCT",
+            "EVENT",
+            "WORK_OF_ART",
+            "LAW"]
 
-    hashtags = []
-    for ent in doc.ents:
-        if ent.label_ in LABELS:
-            ent_text_regex = re.sub(r"[^\w\s]", "", ent.text)
-            ent_elements = [el.lower() for el in ent_text_regex.split()]
-            hashtag = f'#{"".join(ent_elements)}'
-            hashtags.append(hashtag)
+        hashtags = []
+        for ent in doc.ents:
+            if ent.label_ in LABELS:
+                ent_text_regex = re.sub(r"[^\w\s]", "", ent.text)
+                ent_elements = [el.lower() for el in ent_text_regex.split()]
+                hashtag = f'#{"".join(ent_elements)}'
+                hashtags.append(hashtag)
 
-    hashtags = " ".join(hashtags)
-    if hashtags:
-        tweet["hashtags"] = hashtags
-    else:
-        tweet["hashtags"] = "No hashtag available for this tweet."
+        hashtags = " ".join(hashtags)
+        if hashtags:
+            tweet["hashtags"] = hashtags
+        else:
+            tweet["hashtags"] = "No hashtag available for this tweet."
 
-    return tweet
+        return tweet
 
 
 # LOAD (L)
@@ -116,7 +117,7 @@ if __name__ == "__main__":
                 continue
         else:
             logging.warning(
-                "No tweet found in MongoDB. Waiting for something to write in Postgres."
+                "No tweet found in MongoDB. Waiting for records to write in Postgres."
             )
             sleep(60 * 30)
             continue

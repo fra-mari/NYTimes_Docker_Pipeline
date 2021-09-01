@@ -1,4 +1,4 @@
-"""Sends tweets to a telegram bot"""
+"""Sends tweets to the telegram bot"""
 
 import os
 import logging
@@ -51,7 +51,7 @@ try:
         """Send a message when the command /start is issued."""
         context.bot.send_message(
             chat_id=update.effective_chat.id,
-            text='''Hello folks!👋🏻\nI'm a simple bot that selects the latest tweet of the New York Times on topics of your choice.\n\nTell me a word or a string of words! I shall see if I can find it in one of the NYT tweets...\n\nType /help for more information.\n\n📌 <a href="https://github.com/fra-mari/NYTimes_Docker_Pipeline">Click here</a> for the GitHub repository of this bot.''',
+            text='''Hello folks!👋🏻\nI'm a simple bot that selects the latest tweet of the New York Times on topics of your choice.\n\nTell me a word or a string of words! I shall see if I can find it in one of the NYT tweets...\n\n📌 Type /help for more information.\n\n📌 Type /info for checking out the code which keeps me alive.''',
             parse_mode=telegram.ParseMode.HTML)
 
     start_handler = CommandHandler("start", start)
@@ -66,6 +66,16 @@ try:
 
     help_handler = CommandHandler("help", help)
     dispatcher.add_handler(help_handler)
+
+    def info(update, context):
+        """Send a message when the command /info is issued."""
+        context.bot.send_message(
+            chat_id=update.effective_chat.id,
+            text="<b>🖥 For more information about me</b>,\nyou can check out my code on <a href='https://github.com/fra-mari/NYTimes_Docker_Pipeline'>GitHub</a>.",
+            parse_mode=telegram.ParseMode.HTML)
+
+    info_handler = CommandHandler("info", info)
+    dispatcher.add_handler(info_handler)
 
     updater.start_polling()
 

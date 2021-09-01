@@ -47,4 +47,15 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - TOKEN_TELEGRAM=${TOKEN_TELEGRAM}
 
+  tweet_eraser:
+    build: tweet_eraser/
+    volumes:
+      - ./tweet_eraser/:/app 
+    depends_on: 
+      - mongodb
+      - postgresdb
+    environment: 
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
+
   

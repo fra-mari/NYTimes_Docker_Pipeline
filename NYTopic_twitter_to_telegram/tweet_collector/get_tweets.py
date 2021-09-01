@@ -97,7 +97,7 @@ class MyStreamListener(StreamListener):
 
             tweet = {"text": tweet_text,
                 "username": status.user.screen_name,
-                "tweet_date": str(status.created_at)}
+                "tweet_date": status.created_at}
 
             # check if we have enough tweets collected
             if self.max_tweets == self.counter:
