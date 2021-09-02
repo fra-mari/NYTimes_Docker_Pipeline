@@ -51,7 +51,7 @@ def database_cleaner():
 
 logging.warning('The Database Cleaner is up and running.')
 while True:
-    logging.warning('A new cleaning cycle will be run in a 24 hours.')
+    logging.warning('A new cleaning cycle will be run in 24 hours.')
     sleep(60*60*24)
     logging.warning('Time to clean up some records from MongoDB and PostgreSQL.')
     database_cleaner()
