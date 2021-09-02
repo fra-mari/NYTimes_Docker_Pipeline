@@ -26,9 +26,6 @@ pg = create_engine(f"postgresql://postgres:{PW}@postgresdb:5432/nytimes")
 def database_cleaner():
     '''Removes tweets older than a year from MongoDB and PostrgreSQL containers.'''
 
-    #Count the records
-    logging.info(f'{len(list(collection.find()))} records currently in MongoDB.')
-    
     #Take the date
     today = dt.datetime.strptime(dt.datetime.today().strftime(FRMT),FRMT) 
     a_year_ago = today - dt.timedelta(days=365)
@@ -36,16 +33,21 @@ def database_cleaner():
     #Mongo
     mongo_query = { "tweet_date" : { "$lt" : a_year_ago } }
     
+    logging.info(f'{len(list(collection.find()))} records currently in MongoDB.')
     gone = collection.delete_many(mongo_query)
-    logging.warning(f'{gone.deleted_count} tweets deleted from MongoDB. Remaining records: {len(list(collection.find()))}.')
+    logging.warning(f'{gone.deleted_count} tweets older than a year deleted from MongoDB. Remaining records: {len(list(collection.find()))}.')
     
     #Postgres
     psql_query = f"""DELETE from tweets_transformed
             WHERE date < '{a_year_ago}'
             ;
     """
+    count_before = pg.execute('''SELECT COUNT(*) FROM tweets_transformed;''').fetchall()[0][0]
+    logging.info(f"{count_before} records currently in PostgreSQL.")
     pg.execute(psql_query)
-    logging.warning("Tweets older than a year erased from postgres.")
+    count_after = pg.execute('''SELECT COUNT(*) FROM tweets_transformed;''').fetchall()[0][0]
+    logging.warning(f"{count_before-count_after} tweets older than a year erased from Postgres. Remaining records: {count_after}.")
+
 
 logging.warning('The Database Cleaner is up and running.')
 while True:
