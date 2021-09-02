@@ -30,7 +30,7 @@ def tweets_to_bot(words):
         ;"""
 
     result = pg.execute(query)
-    res = list(result.fetchall())
+    res = result.fetchall()
     if len(res) != 0:
         t = f"""✅ The New York Times last tweeted on  “<b>{words}</b>” on {str(res[0][0])} GMT.\n\n<i>Here's the tweet:</i>\n\n{res[0][1]}\n\n<b>Hashtags</b>: <i>{res[0][2]}</i>"""
         logging.warning(f'New tweet sent to bot for input keyword: "{words}".')
