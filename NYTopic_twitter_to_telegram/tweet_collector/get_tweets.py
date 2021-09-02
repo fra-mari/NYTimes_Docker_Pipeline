@@ -46,7 +46,7 @@ def authentication_attempt():
 
 
 def cursor_cycle():
-    """Function for reading the last 10 tweets from the NYT's Twitter timeline and sending the relevant one to the MongoDB container."""
+    """Function for reading up to 10 tweets from the NYT's Twitter timeline and sending the relevant one to the MongoDB container."""
 
     for status in cursor.items(10):
         text = status.full_text
@@ -129,7 +129,7 @@ db = (client.tweet_collector)
 #create a collection called "tweet_data"
 collection = db.tweet_data
 
-# initial loading of past tweets (runs for six hours)
+# initial loading of past tweets (runs for a few hours)
 api, auth = authentication_attempt()
 cursor = Cursor(api.user_timeline, id="nytimes", tweet_mode="extended")
 
