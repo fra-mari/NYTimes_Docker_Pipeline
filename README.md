@@ -1,18 +1,14 @@
 <p align='center'><img src='./img_and_gif/NYTtopic_logo.png' height='110'></p>
-
 <h1 align="center" >The New York Times Docker Pipeline</h1>
-
 <p align="center"><img src="https://img.shields.io/badge/Made%20with-Python-E8B90F.svg"/> <img src="https://img.shields.io/badge/Maintained%5F-yes-pink.svg"/> <img src="https://img.shields.io/badge/Hosted-Currently%20not-red.svg"/> <img src="https://img.shields.io/badge/License-MIT-blue.svg"/><br></p><p align="center"><i>Running on Telegram <a href="https://t.me/NYTtopic_bot">@NYTtopic</a></i><br></p>
-
-
-
 <br>
 
-
+<div><div style="float: left; padding-right: 15px">
 <img src='./img_and_gif/NYTtopic.gif' height='650' align='left'>
-<p>This code maintains a simple <b>Telegram bot</b> which collects fresh updates from the Twitter account of <i>The New York Times</i> and allows the user to look for recent articles on topics of their choice.<br>Hosted on <a href='https://aws.amazon.com/ec2/'><b>Amazon EC2</b></a>, the <a href="https://t.me/NYTtopic_bot">NYTtopic Bot</a> consists of a pipeline of Docker containers:<br></p>
+</div><div style="float: right; padding-right: 15px"><p>This code maintains a simple <b>Telegram bot</b> which collects fresh updates from the Twitter account of <i>The New York Times</i> and allows the user to look for recent articles on topics of their choice.<br>Hosted on <a href='https://aws.amazon.com/ec2/'><b>Amazon EC2</b></a>, the <a href="https://t.me/NYTtopic_bot">NYTtopic Bot</a> consists of a pipeline of Docker containers:<br></p>
+</div><div style="float: right;padding-left: 15px; padding-right: 15px"><p>This code maintains a simple <b>Telegram bot</b> which collects fresh updates from the Twitter account of <i>The New York Times</i> and allows the user to look for recent articles on topics of their choice.<br>Hosted on <a href='https://aws.amazon.com/ec2/'><b>Amazon EC2</b></a>, the <a href="https://t.me/NYTtopic_bot">NYTtopic Bot</a> consists of a pipeline of Docker containers:<br></p>
   <p>➤&nbsp;a <b>first container</b> runs a Python module which leverages <a href='https://www.tweepy.org'>Tweepy</a> for accessing <i>The New York Times</i>'s profile via the <a href='https://developer.twitter.com/en/docshttps://developer.twitter.com/en/docs'>Twitter API</a>, creating a stream of tweets and storing these into a <a href='https://www.mongodb.com/'>Mongo database</a> (<b>second container</b>);</p>
-  <p>➤&nbsp;the <b>third container</b> carries out ETL tasks. It uses <a href='https://spacy.io'>SpaCy</a> to perform <a href='https://en.wikipedia.org/wiki/Named-entity_recognition'><b>named-entity recognition (NER)</b></a> on the text of each tweet extracted from MongoDB. These tags are then formatted as <i>#hashtags</i>, and all the data are eventually stored into a <a href='https://www.postgresql.org'>PostgreSQL database</a> (<b>fourth container</b>);</p><p>➤&nbsp;the <b>fifth container</b> feeds all the data into the Telegram bot, which is controlled and kept online using a library called <a href='https://python-telegram-bot.readthedocs.io/en/stable/'>Python Telegram Bot</a>;</p><p>➤&nbsp;the <b>sixth and last container</b> runs once per week, removing the records older than a year from both databases, so as to prevent them from growing too large.</p><p>I hope this bot will be useful anytime you are looking for high quality information.<br><br><br></p></div>
+  <p>➤&nbsp;the <b>third container</b> carries out ETL tasks. It uses <a href='https://spacy.io'>SpaCy</a> to perform <a href='https://en.wikipedia.org/wiki/Named-entity_recognition'><b>named-entity recognition (NER)</b></a> on the text of each tweet extracted from MongoDB. These tags are then formatted as <i>#hashtags</i>, and all the data are eventually stored into a <a href='https://www.postgresql.org'>PostgreSQL database</a> (<b>fourth container</b>);</p><p>➤&nbsp;the <b>fifth container</b> feeds all the data into the Telegram bot, which is controlled and kept online using a library called <a href='https://python-telegram-bot.readthedocs.io/en/stable/'>Python Telegram Bot</a>;</p><p>➤&nbsp;the <b>sixth and last container</b> runs once per week, removing the records older than a year from both databases, so as to prevent them from growing too large.</p><p>I hope this bot will be useful anytime you are looking for high quality information.<br><br><br></p></div></div>
 
 
 
